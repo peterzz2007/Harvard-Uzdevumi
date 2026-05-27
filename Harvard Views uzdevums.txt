@@ -7,4 +7,4 @@
 #7. SELECT english_title FROM views WHERE artist = 'Hiroshige' ORDER BY brightness DESC LIMIT 5
 #8. SELECT english_title FROM views WHERE artist = 'Hokusai' ORDER BY contrast ASC LIMIT 5
 #9. SELECT english_title, artist FROM views ORDER BY brightness DESC LIMIT 1
-#10. SELECT japanese_title AS "Japanese Titles Sorted By Contrast" FROM views WHERE artist = 'Hokusai' ORDER BY contrast DESC
+#10. SELECT japanese_title AS "Japanese Titles Sorted By Contrast" FROM views WHERE artist = 'Hokusai' ORDER BY contrast DESC 
