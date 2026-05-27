@@ -11,4 +11,4 @@
 #10. SELECT id, title, production_code FROM episodes
 #11. SELECT title FROM episodes WHERE season = 5 ORDER BY title DESC
 #12. SELECT COUNT(DISTINCT title) FROM episodes 
-#13. SELECT COUNT(title) FROM episodes WHERE season = 6 AND air_date = BETWEEN '2007-01-01' AND '2007-12-31'
+#13. SELECT COUNT(title) FROM episodes WHERE season = 6 AND air_date = BETWEEN '2007-01-01' AND '2007-12-31' 
