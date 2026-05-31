@@ -1,0 +1,23 @@
+The Lost Letter
+
+SQL Vaicājumi
+SELECT p.id FROM packages p JOIN addresses a ON p.from_address_id = a.id WHERE a.address = '900 Somerville Avenue' AND p.contents = 'Congratulatory letter' (Pieprasu pasūtījuma ID pēc tās adreses)
+SELECT a.address, s.action, a.type FROM scans s JOIN packages p ON s.package_id = p.id JOIN addresses a ON s.address_id = a.id WHERE p.id = '384' (Pieprasu iepakojuma statusu)
+
+Atbildes: Pasūtījums ir '2 Finnigan Street' kas ir 'residential' tipa iela. Iepakojums sasniedza savu mērķi.
+
+The Devious Delivery
+
+SQL Vaicājumi 
+SELECT p.id, a.address, p.contents FROM packages p LEFT JOIN addresses a ON p.to_address_id = a.id WHERE p.contents LIKE '%duck%' AND p.from_address_id IS NULL (Pieprasu pasūtījuma ID)
+SELECT a.address, s.action, a.type FROM scans s JOIN packages p ON s.package_id = p.id JOIN addresses a ON s.address_id = a.id WHERE p.id = '5098' (Pieprasu pasūtījuma adresi un tās statusu)
+
+Atbildes: Pasūtījums ir 'Police station' tipa adresē un tās saturā ir 'Duck debugger'.
+
+The Forgotten Gift
+
+SQL Vaicājumi
+SELECT p.id, p.contents FROM packages p JOIN addresses a ON from_address_id = a.id WHERE a.address = '109 Tileston Street' (Pieprasu pasūtījuma ID pēc sūtītāja adreses)
+SELECT a.address, s.action, a.type FROM scans s JOIN packages p ON package_id = p.id JOIN addresses a ON address_id = a.id WHERE p.id = '9523'
+
+Atbildes: Pasūtījums ir 'Flowers' un tā atrodas Noliktavā (address type Warehouse) 950 Brannon Harris Way
