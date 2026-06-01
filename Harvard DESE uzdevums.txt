@@ -1,0 +1,13 @@
+#1. SELECT name, city FROM schools WHERE state = 'MA' AND type = 'Public School'
+#2. SELECT name FROM districts WHERE name LIKE '%non-op%'
+#3. SELECT ROUND(AVG(per_pupil_expenditure), 2) AS "Average Per-Pupil Expenditure" FROM expenditures
+#4. SELECT city, COUNT(*) AS schoolcount FROM schools WHERE type = 'Public School' GROUP BY city ORDER BY schoolcount DESC, city ASC LIMIT 10
+#5. SELECT city, COUNT(*) AS schoolcount FROM schools WHERE type = 'Public School' GROUP BY city HAVING schoolcount <= 3  ORDER BY schoolcount DESC, city ASC
+#6. SELECT s.name FROM schools s JOIN graduation_rates g ON g.school_id = s.id WHERE graduated = '100'
+#7. SELECT s.name FROM schools s JOIN districts d ON s.district_id = d.id WHERE d.name = 'Cambridge'
+#8. SELECT d.name, e.pupils FROM districts d JOIN expenditures e ON e.district_id = d.id 
+#9. SELECT d.name FROM districts d JOIN expenditures e ON e.district_id = d.id ORDER BY e.pupils ASC LIMIT 5
+#10. SELECT d.name, e.per_pupil_expenditure FROM districts d JOIN expenditures e ON e.district_id = d.id ORDER BY e.per_pupil_expenditure DESC LIMIT 10
+#11. SELECT s.name, e.per_pupil_expenditure, g.graduated FROM schools s JOIN districts d ON s.district_id = d.id JOIN expenditures e ON e.district_id = d.id JOIN graduation_rates g ON g.school_id = s.id ORDER BY e.per_pupil_expenditure DESC, s.name ASC
+#12. SELECT d.name, e.per_pupil_expenditure, f.exemplary FROM districts d JOIN expenditures e ON e.district_id = d.id JOIN staff_evaluations f ON f.district_id = d.id WHERE e.per_pupil_expenditure > (SELECT AVG(per_pupil_expenditure) FROM expenditures) AND f.exemplary > (SELECT AVG(exemplary) FROM staff_evaluations)
+#13. SELECT s.name FROM schools s JOIN districts d ON s.district_id = d.id WHERE d.name = 'Abington'
