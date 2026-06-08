@@ -1,0 +1,5 @@
+# CREATE VIEW no_descriptions AS SELECT id, property_type, host_name, accommodates, bedrooms FROM listings
+# CREATE VIEW one_bedrooms AS SELECT id, property_type, host_name, accommodates FROM listings WHERE bedrooms = 1
+# CREATE VIEW available AS SELECT l.id, l.property_type, l.host_name, a.date FROM listings l JOIN availabilities a ON a.listing_id = l.id
+# CREATE VIEW frequently_reviewed AS SELECT l.id, l.property_type, l.host_name, COUNT(r.listing_id) as "reviews" FROM listings l JOIN reviews r ON l.id = r.listing_id GROUP BY l.id, l.property_type, l.host_name ORDER BY property_type ASC, host_name ASC
+# CREATE VIEW june_vacancies AS SELECT l.id, l.property_type, l.host_name, COUNT(a.date) as "days_vacant" FROM listings l JOIN availabilities a ON l.id = a.listing_id WHERE a.date BETWEEN '2023-06-01' AND '2023-06-30' AND a.available = 'TRUE' GROUP BY l.id, l.property_type, l.host_name
