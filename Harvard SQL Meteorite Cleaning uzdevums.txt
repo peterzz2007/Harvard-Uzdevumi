@@ -1,0 +1,14 @@
+# CREATE TABLE meteorites(name TEXT, id INTEGER, nametype TEXT, class TEXT, mass NUMERIC, discovery TEXT, year INTEGER, lat NUMERIC, long NUMERIC)
+# conn = sqlite3.connect('meteorites.db')
+# c = conn.cursor()
+# file = open("meteorites.csv" ,encoding= 'utf-8')
+# contents = csv.reader(file)
+# insert = "INSERT INTO meteorites (name, id, nametype, class, mass, discovery, year, lat, long) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+# c.executemany(insert, contents)
+# conn.commit()
+# DELETE FROM meteorites WHERE name = 'name'
+# UPDATE meteorites SET mass = NULLIF(mass, ''), year = NULLIF(year, ''), lat = NULLIF(lat, ''), long = NULLIF(long, '')
+# UPDATE meteorites SET lat = ROUND(lat, 2), long = ROUND(long, 2)
+# DELETE FROM meteorites WHERE nametype = 'Relict'
+# ALTER TABLE meteorites RENAME TO meteo_temp
+# CREATE TABLE meteorites AS  SELECT name, ROW_NUMBER() OVER (ORDER BY year ASC, name ASC) AS id, nametype, class, mass, discovery, year, lat, long FROM meteo_temp ORDER BY year ASC, name ASC
